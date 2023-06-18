@@ -1,9 +1,20 @@
+body {
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2em;
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 60vh;
 }
 
 #signup-form {
@@ -14,10 +25,12 @@
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
+    background: #fff;
+    border: none;
 }
 
 .error {
-    color: red;
+    color: #f00;
 }
 
 #submit-button {
@@ -28,4 +41,58 @@
     bottom: 10%;
     transform: translate(-50%, -50%);
     transition: .5s;
+}
+
+/* classes for button shapes */
+.circle {
+    border-radius: 50%;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+}
+
+.oval {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.rectangle {
+    width: 100px;
+    height: 50px;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #000;
+}
+
+.hexagon {
+    width: 60px; 
+    height: 35px;
+    background: #000;
+    position: relative;
+    margin: 20px 0;
+}
+
+.hexagon:before, .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
+.hexagon:before {
+    bottom: 100%;
+    border-bottom: 17.5px solid #000;
+}
+.hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 17.5px solid #000;
 }
