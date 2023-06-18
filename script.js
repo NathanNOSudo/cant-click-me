@@ -20,7 +20,7 @@ function clearErrors() {
     passwordError.textContent = '';
 }
 
-function moveButton() {
+function moveButton(e) {
     let x = Math.floor(Math.random() * window.innerWidth);
     let y = Math.floor(Math.random() * window.innerHeight);
     btn.style.left = x + 'px';
@@ -41,16 +41,18 @@ form.addEventListener('input', function() {
     if (!password.value) {
         showError(password, 'Password is required');
     }
+});
 
-    if (usernameError.textContent || emailError.textContent || passwordError.textContent) {
-        moveButton();
+btn.addEventListener('mouseover', function(e) {
+    if (usernameError.textContent || emailError.textContent || passwordError.textContent || !username.value || !email.value || !password.value) {
+        moveButton(e);
     }
 });
 
 btn.addEventListener('click', function(e) {
     e.preventDefault();
     if (usernameError.textContent || emailError.textContent || passwordError.textContent || !username.value || !email.value || !password.value) {
-        moveButton();
+        moveButton(e);
     } else {
         alert('Form submitted');
     }
