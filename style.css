@@ -1,0 +1,8 @@
+.error {
+    color: red;
+}
+
+#submit-button {
+    position: absolute;
+    transition: .5s;
+}
