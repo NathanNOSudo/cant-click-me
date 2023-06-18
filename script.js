@@ -9,6 +9,8 @@ let usernameError = document.getElementById('usernameError');
 let emailError = document.getElementById('emailError');
 let passwordError = document.getElementById('passwordError');
 
+const shapes = ['circle', 'square', 'oval', 'rectangle', 'triangle', 'hexagon'];
+
 function showError(input, errorText) {
     let error = document.getElementById(input.id + 'Error');
     error.textContent = errorText;
@@ -25,6 +27,13 @@ function moveButton(e) {
     let y = Math.floor(Math.random() * window.innerHeight);
     btn.style.left = x + 'px';
     btn.style.top = y + 'px';
+    changeShape();
+}
+
+function changeShape() {
+    let randomShape = shapes[Math.floor(Math.random() * shapes.length)];
+    btn.className = ''; // Clear previous shape
+    btn.classList.add(randomShape);
 }
 
 form.addEventListener('input', function() {
@@ -57,3 +66,6 @@ btn.addEventListener('click', function(e) {
         alert('Form submitted');
     }
 });
+
+// Initial shape change on page load
+changeShape();
